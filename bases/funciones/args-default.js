@@ -7,8 +7,6 @@
             return `${firstName} ${lastName || '--'}`;
         }
     };
-    // let noName: any;
-    // const name = fullName(noName, 'Stark');
     const name = fullName('Tony', 'Stark', true);
     console.log({ name });
 })();
