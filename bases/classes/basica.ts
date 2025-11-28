@@ -18,13 +18,13 @@
     }
 
 
-    const antman: Avenger = new Avenger("Antman", "Capitan", "Scott Lang");
-    console.log(antman);
+    // const antman: Avenger = new Avenger("Antman", "Capitan", "Scott Lang");
+    // console.log(antman);
     
-    console.log(Avenger.getAvgAge());
+    // console.log(Avenger.getAvgAge());
 
-    // Aunque es privado, se puede acceder dentro de la clase en ES6.
-    // En ESNext no se puede.
-    // console.log(antman.bio());
+    // // Aunque es privado, se puede acceder dentro de la clase en ES6.
+    // // En ESNext no se puede.
+    // // console.log(antman.bio());
 
 })();
