@@ -24,9 +24,9 @@
     // const apocalipsis = new Apocalipsis('Soy apocalipsis... el único');
     // console.log(apocalipsis);
 
-    const apocalipsis1 = Apocalipsis.callApocalipsis();
+    /* const apocalipsis1 = Apocalipsis.callApocalipsis();
     const apocalipsis2 = Apocalipsis.callApocalipsis();
     const apocalipsis3 = Apocalipsis.callApocalipsis();
 
-    console.log(apocalipsis1, apocalipsis2, apocalipsis3);
+    console.log(apocalipsis1, apocalipsis2, apocalipsis3); */
 })();
