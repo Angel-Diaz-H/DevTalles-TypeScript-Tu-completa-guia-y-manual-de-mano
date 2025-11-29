@@ -6,4 +6,24 @@
         powers: ['Super velocidad', 'Viajar en el tiempo'],
     };
 })();
+(() => {
+    ;
+    const client = {
+        name: 'Angel',
+        address: {
+            id: 125,
+            zip: 'KY432',
+            city: 'Ottawa'
+        }
+    };
+    const client2 = {
+        name: 'Melissa',
+        age: 30,
+        address: {
+            city: 'Miami',
+            id: 126,
+            zip: 'MI654',
+        }
+    };
+})();
 //# sourceMappingURL=main.js.map
