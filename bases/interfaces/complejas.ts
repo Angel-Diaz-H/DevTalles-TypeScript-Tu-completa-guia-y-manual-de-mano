@@ -5,6 +5,10 @@
         name: string;
         age?: number;
         address: Address;
+
+        // Lo ideal es crear clases para métodos complejos.
+        // Las interfaces no crean instancias.
+        getFullAddress(id: string): string;
     };
 
     interface Address {
@@ -20,6 +24,9 @@
             id: 125,
             zip: 'KY432',
             city: 'Ottawa'
+        },
+        getFullAddress(id: string){
+            return this.address.city;
         }
     };
 
@@ -30,6 +37,9 @@
             city: 'Miami',
             id: 126,
             zip: 'MI654',
+        },
+        getFullAddress(id: string){
+            return this.address.city;
         }
     }
 })();
