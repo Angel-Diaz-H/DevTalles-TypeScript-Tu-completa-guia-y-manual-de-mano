@@ -32,7 +32,7 @@
     // console.log(villian.conquistarMundo());
 
     const printName = (character: Mutante) => {
-        console.log(character.realName);
+        // console.log(character.realName);
     }
 
     printName(wolverine);
