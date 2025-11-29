@@ -41,11 +41,11 @@
         }
     };
 
-    const wolverine = new Xmen('Wolverine', 'Logan', true);
+    // const wolverine = new Xmen('Wolverine', 'Logan', true);
     // console.log(wolverine);
     // wolverine.getFullNameDesdeXmen();
-    const nuevoAvenger = new Avenger('Hola', 'Mundo');
+    // const nuevoAvenger = new Avenger('Hola', 'Mundo');
 
-    wolverine.fullName = 'An'
-    console.log(wolverine.fullName);
+    // wolverine.fullName = 'An'
+    // console.log(wolverine.fullName);
 })();

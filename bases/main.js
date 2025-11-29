@@ -1,5 +1,33 @@
 "use strict";
 (() => {
+    class Mutante {
+        constructor(nombre, realName) {
+            this.nombre = nombre;
+            this.realName = realName;
+        }
+        ;
+    }
+    ;
+    class Xmen extends Mutante {
+        salvarMundo() {
+            return 'Mundo salvado';
+        }
+    }
+    ;
+    class Villian extends Mutante {
+        conquistarMundo() {
+            return 'Mundo conquistado';
+        }
+    }
+    ;
+    const wolverine = new Xmen('Wolverine', 'Logan');
+    const villian = new Villian('Magneto', 'Magnus');
+    const printName = (character) => {
+        console.log(character.realName);
+    };
+    printName(wolverine);
+})();
+(() => {
     class Avenger {
         static getAvgAge() {
             return this.name;
@@ -47,9 +75,5 @@
         }
     }
     ;
-    const wolverine = new Xmen('Wolverine', 'Logan', true);
-    const nuevoAvenger = new Avenger('Hola', 'Mundo');
-    wolverine.fullName = 'An';
-    console.log(wolverine.fullName);
 })();
 //# sourceMappingURL=main.js.map
