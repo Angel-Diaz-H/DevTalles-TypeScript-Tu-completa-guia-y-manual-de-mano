@@ -1,35 +1,56 @@
 function printToConsole(constructor: Function) {
-    console.log(constructor);
+    console.log(constructor)
 }
 
 const printToConsoleConditional = (print: boolean = false): Function => {
     if (print) {
         return printToConsole;
     } else {
-        return () => { };
+        return () => { }
     }
-};
+}
 
-// Bloquea la modificacion de la clase
 const bloquearPrototipo = function (constructor: Function) {
-    Object.seal(constructor);
-    Object.seal(constructor.prototype);
+    Object.seal(constructor)
+    Object.seal(constructor.prototype)
 }
 
 function CheckValidPokemonId() {
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-        // console.log({target, propertyKey, descriptor});
 
         const originalMethod = descriptor.value;
 
         descriptor.value = (id: number) => {
             if (id < 1 || id > 800) {
-                console.error('El id del pokemon debe estar entre 1 y 800');
-                return;
+                return console.error('El id del pokemon debe de estar entre 1 y 800')
             } else {
-                return originalMethod(id);
+                return originalMethod(id)
             }
         }
+        // descriptor.value = () => console.log('Hola mundo');
+
+    }
+}
+
+function readonly(isWritable: boolean = true): Function {
+    return function (target: any, propertyKey: string) {
+
+        const descriptor: PropertyDescriptor = {
+            get() {
+                console.log(this)
+                return 'Fernando'
+            },
+            set(this, val) {
+                // console.log(this, val )
+                Object.defineProperty(this, propertyKey, {
+                    value: val,
+                    writable: !isWritable,
+                    enumerable: false
+                })
+            }
+        }
+
+        return descriptor;
     }
 }
 
@@ -37,14 +58,15 @@ function CheckValidPokemonId() {
 @printToConsoleConditional(false)
 export class Pokemon {
 
-    public publicApi: string = 'https://pokeapi.co';
+    @readonly(true)
+    public publicApi: string = 'https://pokeapi.co'
 
     constructor(
-        public name: string,
-    ) { };
+        public name: string
+    ) { }
 
     @CheckValidPokemonId()
     savePokemonToDB(id: number) {
-        console.log(`Pokemon guardado en BD con el id ${id}`);
+        console.log(`Pokemon guardado en DB ${id}`);
     }
-};
+}
